@@ -13,6 +13,7 @@ public class EmpVO {
 	private String lastName;
 	private String email;
 	@DateTimeFormat(pattern="yyyy-MM-dd")
+	//@JsonFormat(pattern="yyyy-MM-dd")
 	private Date hireDate;
 	private String jobId;
 	private double salary;

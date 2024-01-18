@@ -29,6 +29,8 @@
 		<property name="configLocation"
 			value="classpath:mybatis-config.xml" />
 		<!-- mapperLoation -->
+		<!--  property name="mapperLocations" 
+			value="*classpath:mapper/*.xml"/> -->
 	</bean>
 
 	<!-- mapper scan -->
