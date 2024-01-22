@@ -7,9 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yedam.app.board.service.BoardService;
 import com.yedam.app.board.service.BoardVO;
@@ -74,9 +77,17 @@ public class BoardController {
 		
 	// 수정 - 처리 : URI - boardUpdate / PARAMETER - BoardVO
 	//			 / RETURN - 수정결과 데이터(Map)
+	// => Ajax
 	@PostMapping("boardUpdate")
-	public Map<String, Object> updateBoardProcess(@RequestBody BoardVO boardVO){
+	@ResponseBody
+	public Map<String, Object> updateBoardProcess(@RequestBody BoardVO boardVO, Model model){
 		return boardService.updateBoardInfo(boardVO);
 	}
 	// 삭제
+	@GetMapping("boardDelete")
+	public String deleteBoard(@RequestParam Integer bno) {
+		boardService.deleteBoardInfo(bno);
+		return "redirect:boardList";
+	}
+	
 }

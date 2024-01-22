@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.yedam.app.aop.mapper.AaaMapper;
 import com.yedam.app.board.mapper.BoardMapper;
 import com.yedam.app.board.service.BoardVO;
 
@@ -77,4 +78,5 @@ public class BoardTest {
 //		assertNotEquals(result, 0);
 //	}
 //	
+		
 }

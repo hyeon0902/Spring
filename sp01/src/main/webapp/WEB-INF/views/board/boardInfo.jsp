@@ -12,7 +12,7 @@
 	<div class="container">
 		<h1>게시글 조회</h1>
 			<table class="table">
-				<tr>
+				<tr hidden>
 					<th>게시글 번호</th>
 					<td>${boardInfo.bno}</td>
 				</tr>
@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<th>이미지</th> <!-- app.jpg -->
-					<td><img src="<c:url value="/resources/${boardInfo.image}"/>"></td>
+					<td><img style="width:200px;" src="<c:url value="/resources/${boardInfo.image}"/>"></td>
 				</tr>
 				<tr>
 					<th>작성일</th> <!-- app.jpg -->
@@ -38,7 +38,7 @@
 				</tr>
 			</table>
 			<button onclick="location.href='boardUpdate?bno=${boardInfo.bno}'">수정</button>
-			<button>삭제</button>
+			<button onclick="location.href='boardDelete?bno=${boardInfo.bno}'">삭제</button>
 	</div>
 <script>
 </script>

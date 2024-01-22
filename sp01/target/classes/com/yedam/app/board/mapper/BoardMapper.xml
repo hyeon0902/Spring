@@ -53,13 +53,14 @@
   			)
   </insert>
   <!-- 수정 -->
-  <update id="updateBoard" parameterType="int">
+  <update id="updateBoard" parameterType="boardVO">
 	UPDATE tbl_board_01
-	SET title = #{title},
+	SET 
+		title = #{title},
 	    contents = #{contents},
 	    writer = #{writer},
-	    updatedate = sysdate,
-	    image = #{image}
+	    image = #{image},
+	    updateDate = sysdate
 	WHERE bno = #{bno}
   </update>
   <!-- 삭제 -->

@@ -25,7 +25,7 @@
 				</tr>
 				<tr>
 					<th>이미지</th> <!-- app.jpg -->
-					<td><input type="text" name="image"></td>
+					<td><input type="file" name="image"></td>
 				</tr>
 			</table>
 			<button type="submit">등록</button>
