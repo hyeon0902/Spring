@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+ <title>Layout page</title>
+</head>
+<body>
+ <header>
+	<ul>
+		<li>사원관리</li>
+		<li>부서관리</li>
+	</ul>
+ </header>
+<section layout:fragment="content">
+	<p>Page content goes here</p>
+ </section>
+<footer layout:fragment="footer">
+	<p>Page footer goes here</p>
+ </footer> 
+</body>
+</html>

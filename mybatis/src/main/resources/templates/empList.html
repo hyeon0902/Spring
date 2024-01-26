@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layout}">
 <head>
 <meta charset="UTF-8">
 <title>empList.html</title>
@@ -10,6 +12,7 @@
 </style>
 </head>
 <body>
+<section layout:fragment="content">
 	<div>[[ ${#lists.size(list)} ]]</div>
 	<div th:text="${#lists.size(list)}"></div>
 <table>
@@ -24,7 +27,7 @@
 	<th:block th:each="emp,st : ${list}">
 	<tr th:class="${st.odd} ? 'odd' : 'even' " th:classappend="${st.first} ? 'trbold' ">
 		<td th:text="${st.count}"></td>
-		<td th:text="${emp.employeeId}"></td>
+		<td><a th:href="@{info.do(employeeId=${emp.employeeId},name=${emp.firstName})}" th:text="${emp.employeeId}"></a></td>
 		<td th:text="|${emp.firstName} ${emp.lastName}|"></td>
 		<td th:text="${#dates.format(emp.hireDate, 'yyyy-MM-dd')}"></td>
 		<td th:text="${emp.salary}"></td>
@@ -33,9 +36,23 @@
 	 </tr>
 	</th:block>
 </table>
-<th:block th:each="emp,st : ${list}">
+<!--/* <th:block th:each="emp,st : ${list}">
 	<span th:text="${emp.firstName}"></span>
 	<span th:text="${emp.lastName}"></span>
-</th:block>
+</th:block> */-->
+
+	<div th:text="'<b>test</b>'"></div>
+	<div th:utext="'<abc>test</abc>'"></div>
+	<div>[[ ${ list[0].firstName } ]]</div>
+	<div>[( ${ list[0].firstName } )]</div>
+</section>
+	<div class="divfooter" th:insert="~{footer :: copy}"></div>
+	
+	<div class="divfooter" th:replace="~{footer :: company}"></div>
+	<script th:inline="javascript">
+		let emps = [[ ${list} ]]
+		
+		
+	</script>
 </body>
 </html>

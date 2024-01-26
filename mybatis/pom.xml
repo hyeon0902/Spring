@@ -64,6 +64,21 @@
 	      <artifactId>poi-ooxml</artifactId>
 	      <version>4.1.2</version>
 	    </dependency>
+	    <!-- thymeleaf layout -->
+	   <dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
+		<!-- Mustache  -->
+<!-- 		 <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mustache</artifactId>
+		</dependency> -->
+		<!-- Spring boot starter security -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
